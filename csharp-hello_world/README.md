@@ -3,6 +3,15 @@ mandatory
 Write a Bash script that initializes a new C# project inside a folder titled 0-new_project.
 
 ~ Use the command dotnet
+This script creates a new dir called 0-new_project and generate a cosole app project inside
+
+dotnet ~ command-line interface for .NET Core
+
+new ~ creates a new project
+
+console ~ specifies type of project to create
+
+-o ~ option specifies the output dir for the new project
 
 1. Build new project
 mandatory

@@ -1,8 +1,3 @@
-#!/bin/bash
-
-# Create a folder 
-mkdir 0-new_project
-cd 0-new_project
-
-# Initialize a new C# console application
-dotnet new console
+#!/bin/env bash
+# Initialize a new C# console app
+dotnet new console -o 0-new_project
