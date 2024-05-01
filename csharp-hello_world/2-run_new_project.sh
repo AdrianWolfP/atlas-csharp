@@ -1,14 +1,2 @@
-#!/bin/bash
-
-# Create a folder 
-mkdir 2-new_project
-cd 2-new_project
-
-# Initialize a new C# console application
-dotnet new console
-
-# Build the project
-dotnet build
-
-# Run the project
-dotnet run
+#!/usr/bin/env bash
+dotnet new console -o 2-new_project && dotnet build 2-new_project && dotnet run --project 2-new_project
