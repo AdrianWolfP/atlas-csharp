@@ -5,6 +5,6 @@ class Program
 	static void Main(string[] args)
 	{
 		string str = "Holberton School";
-		// YOUR CODE GOES HERE. PLEASE REMOVE THIS LINE.
+		Console.WriteLine(str + str + str + "\n" + str.Substring(0,9));
         }
 }
