@@ -2,7 +2,7 @@ using System;
 
 class Array
 {
-    public static int ElementAt(int [] array, int index)
+    public static int elementAt(int [] array, int index)
     {
         // Check if the index is within the bounds of the array
         if (index < 0 || index >= array.Length)
