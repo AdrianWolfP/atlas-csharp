@@ -82,7 +82,7 @@ public class Square : Rectangle
 {
     private int size;
 
-    public int size
+    public int Size
     {
         get { return size; }
         set
