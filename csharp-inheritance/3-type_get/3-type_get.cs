@@ -23,7 +23,7 @@ public class Obj
 
         Console.WriteLine($"{typeInfo.Name} Methods:");
 
-        foreach (MethodsInfo method in typeInfo.GetMethods())
+        foreach (MethodInfo method in typeInfo.GetMethods())
         {
             Console.WriteLine(method.Name);
         }
