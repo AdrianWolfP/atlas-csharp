@@ -2,7 +2,7 @@ using System;
 /// <summary>
 /// Contains a static method for checking if an object is of type int.
 /// </summary>
-public class obj
+public class Obj
 {
     /// <summary>
     /// Determines whether the given object is of type int.
