@@ -11,7 +11,7 @@ public static class Obj
     /// <param name="derivedType">The type that may derive from the base type.</param>
     /// <param name="baseType">The base type to check against.</param>
     /// <returns>True if the derived type is a subclass of the base type, false otherwise.</returns>
-    public static bool IsOnlyASubClass(Type derivedType, Type baseType)
+    public static bool IsOnlyASubclass(Type derivedType, Type baseType)
     {
         return derivedType.IsSubclassOf(baseType);
     }
