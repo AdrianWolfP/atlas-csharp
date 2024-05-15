@@ -24,7 +24,7 @@ public interface IInteractive
 public interface IBreakable
 {
     int durabulity { get; set; }
-    void break();
+    void Break();
 }
 
 public interface ICollectable
