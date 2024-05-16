@@ -24,7 +24,7 @@ namespace Text
             {
                 // Check for end of string
                 if (index == s.Length)
-                    retrun -1;
+                    return -1;
 
                 // Check for non-unique character    
                 if (s[index] == s[i] && !(index == i))
