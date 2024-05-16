@@ -185,25 +185,31 @@ public class RoomObjects
     /// <param name="type">The type of action to perform.</param>
     public static void IterateAction(List<Base> roomObjects, Type type)
     {
+        // Check if the current object is an IInteractive object and if the type parameter is "IInteractive"
         foreach (var item in roomObjects)
         {
-            IInteractive obj = item as IInteractive;
+            if (type.ToString() == "IInteractive" && item is IInteractive)
+            {
+                IInteractive obj = item as IInteractive;
+                
+                // If the object is not null, call the Interact method on it
+                if (obj != null) { obj.Interact (); }
+            }
 
-            if (obj != null) { obj.Interact(); }
-        }
+            // Check if the current object is an IBreakable object and if the type parameter is "IBreakable"
+            if (type.ToString() == "IBreakable" && item is IBreakable)
+            {
+                IBreakable obj = item as IBreakable;
+            }
 
-        if (type.ToString() == "IBreakable" && item is IBreakable)
-        {
-            IBreakable obj = item as IBreakable;
-
-            if (obj != null) { obj.Break(); }
-        }
-
-        if (type.ToString() == "ICollectable" && item is ICollectable)
-        {
-            ICollectable obj = item as ICollectable;
-
-            if (obj != null) { obj.Collect(); }
+            // Check if the current object is an ICollectable object and if the type parameter is "ICollectable"
+            if (type.ToString() == "ICollectable" && item is ICollectable)
+            {
+                ICollectable obj = item as ICollectable;
+                
+                // If the object is not null, call the Collect method on it
+                if (obj != null) { obj.Collect(); }
+            }
         }
     }
 }
