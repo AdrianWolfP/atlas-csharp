@@ -2,7 +2,6 @@ using NUit.Framework;
 
 namespace MyMath.Tests
 {
-    [TestFo]
     public class Tests
     {
         int[,] testmatrix;
