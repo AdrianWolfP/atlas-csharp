@@ -1,5 +1,5 @@
 using System;
-using System.Colections.Generic;
+using System.Collections.Generic;
 
 /// <summary>
 /// Base class for all game objects.
