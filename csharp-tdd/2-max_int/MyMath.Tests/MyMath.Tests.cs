@@ -47,6 +47,13 @@ namespace MyMath.Tests
         }
 
         [Test]
-        public void MaxofFive()
+        public void Max_EmptyList_TestRunSuccessful()
+        {
+            List<int> nums = new List<int>();
+
+            Operations.Max(nums);
+
+            Assert.
+        }
     }
 }
