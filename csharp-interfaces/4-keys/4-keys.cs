@@ -143,19 +143,29 @@ class Decoration : Base, IInteractive, IBreakable
 
 }
 
-
+/// <summary>
+/// A key object.
+/// </summary>
 public class Key : Base, ICollectable
 {
-    
+    /// <summary>
+    /// Whether the key has been collected.
+    /// </summary>
     public bool isCollected { get; set; }
     
-    
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Key"/> class.
+    /// </summary>
+    /// <param name="name">The name of the key. Default is "Key".</param>
+    /// <param name="isCollected">Whether the key has been collected. Default is false.</param>
     public Key(string name = "Key", bool isCollected = false ) {
         this.name = name ;
         this.isCollected = isCollected ;
     }
 
-    
+    /// <summary>
+    /// Collects the key.
+    /// </summary>
     public void Collect() {
         if (!isCollected){
             isCollected = true;
