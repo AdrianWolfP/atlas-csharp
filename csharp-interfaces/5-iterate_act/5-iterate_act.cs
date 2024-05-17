@@ -200,6 +200,7 @@ public class RoomObjects
             if (type.ToString() == "IBreakable" && item is IBreakable)
             {
                 IBreakable obj = item as IBreakable;
+                if (obj != null) { obj.Break(); }
             }
 
             // Check if the current object is an ICollectable object and if the type parameter is "ICollectable"
