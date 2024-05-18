@@ -54,14 +54,14 @@ public static class VectorMath
     }
 
     /// <summary>
-/// This method multiplies a double array (vector) by a scalar value.
-/// The method checks if the length of the input vector is within the valid range (2-3).
-/// If the input vector does not meet this condition, the method returns a new double array containing a single element, -1.
-/// </summary>
-/// <param name="vector">The double array representing a 2D or 3D vector.</param>
-/// <param name="scalar">The scalar value to multiply the input vector by.</param>
-/// <returns>A new double array containing the product of the input vector and the scalar value, or a new double array containing a single element, -1, if the input vector is invalid.</returns>
-/// <exception cref="ArgumentException">Thrown when the length of the input vector is outside the valid range (2-3).</exception>
+    /// This method multiplies a double array (vector) by a scalar value.
+    /// The method checks if the length of the input vector is within the valid range (2-3).
+    /// If the input vector does not meet this condition, the method returns a new double array containing a single element, -1.
+    /// </summary>
+    /// <param name="vector">The double array representing a 2D or 3D vector.</param>
+    /// <param name="scalar">The scalar value to multiply the input vector by.</param>
+    /// <returns>A new double array containing the product of the input vector and the scalar value, or a new double array containing a single element, -1, if the input vector is invalid.</returns>
+    /// <exception cref="ArgumentException">Thrown when the length of the input vector is outside the valid range (2-3).</exception>
     public static double[] Multiply(double[] vector, double scalar)
     {
         // Check if the length of the input vector is within the valid range (2-3).
