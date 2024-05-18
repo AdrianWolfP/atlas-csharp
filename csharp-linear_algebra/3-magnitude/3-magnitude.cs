@@ -1,5 +1,8 @@
 using System;
 
+/// <summary>
+/// A static class containing methods for performing vector math operations.
+/// </summary>
 public static class VectorMath
 {
     /// <summary>
