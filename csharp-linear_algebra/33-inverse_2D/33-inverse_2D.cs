@@ -190,13 +190,13 @@ public static class MatrixMath
     }
 
     /// <summary>
-/// This method calculates the determinant of a square matrix.
-/// The method first checks if the input matrix is a valid square matrix.
-/// If the input matrix is a 2x2 matrix, the method calculates the determinant using the formula: a*d - b*c.
-/// If the input matrix is a larger square matrix, the method calculates the determinant using the Leibniz formula for the determinant of a matrix.
-/// </summary>
-/// <param name="matrix">The square 2D double array representing a matrix.</param>
-/// <returns>The determinant of the input matrix, or -1 if the input matrix is not a valid square matrix.</returns>
+    /// This method calculates the determinant of a square matrix.
+    /// The method first checks if the input matrix is a valid square matrix.
+    /// If the input matrix is a 2x2 matrix, the method calculates the determinant using the formula: a*d - b*c.
+    /// If the input matrix is a larger square matrix, the method calculates the determinant using the Leibniz formula for the determinant of a matrix.
+    /// </summary>
+    /// <param name="matrix">The square 2D double array representing a matrix.</param>
+    /// <returns>The determinant of the input matrix, or -1 if the input matrix is not a valid square matrix.</returns>
     public static double Determinate(double[,] matrix)
     {
         // Check if the input matrix is a valid square matrix.
@@ -206,7 +206,7 @@ public static class MatrixMath
         // Calculate the determinant of the input matrix.
         if (ValidateMatrix2D(matrix))
             // Calculate the determinant using the formula: a*d - b*c.
-            return MatrixMath.Round(matrix[0, 0] * matrix[1, 1] - matrix[0, 1] * matrix[1, 0], 2);
+            return Math.Round(matrix[0, 0] * matrix[1, 1] - matrix[0, 1] * matrix[1, 0], 2);
         double result = 0;
         double? temp = null;
         // Calculate the determinant using the Leibniz formula for the determinant of a matrix.
