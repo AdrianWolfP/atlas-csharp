@@ -72,15 +72,70 @@ public static class MatrixMath
         return true;
     }
 
+    /// <summary>
+/// This method checks if a 2D double array (matrix) is a valid 2x2 matrix.
+/// </summary>
+/// <param name="matrix">The 2D double array representing a matrix.</param>
+/// <returns>True if the input matrix is a valid 2x2 matrix, false otherwise.</returns>
     static bool ValidateMatrix2D(double[,] matrix)
     {
         return (matrix.GetLength(0) == 2 && matrix.GetLength(1) == 2);
     }
 
+    /// <summary>
+/// This method multiplies two 2D double arrays (matrices) of compatible dimensions.
+/// The method checks if the number of columns of the first matrix is equal to the number of rows of the second matrix.
+/// If the input matrices do not meet this condition, the method returns a new 2D double array containing a single element, -1, to indicate an error.
+/// </summary>
+/// <param name="matrix1">The first 2D double array representing a matrix.</param>
+/// <param name="matrix2">The second 2D double array representing a matrix.</param>
+/// <returns>A new 2D double array containing the product of the input matrices, or a new 2D double array containing a single element, -1, if the input matrices are invalid.</returns>
+/// <exception cref="ArgumentException">Thrown when the dimensions of the input matrices are not compatible for multiplication.</exception>
     public static double[,] Multiply(double[,] matrix1, double[,] matrix2)
     {
+        // Check if the number of columns of the first matrix is equal to the number of rows of the second matrix.
         if (matrix1.GetLength(1) != matrix2.GetLength(0))
+            // Return a new 2D double array containing a single element, -1, if the input matrices are invalid.
             return new double[,] {{-1}};
-
-        double[,] result = new double[matrix1.GetLength]
+        // Return a new 2D double array containing a single element, -1, if the input matrices are invalid.
+        double[,] result = new double[matrix1.GetLength(0), matrix2.GetLength(1)];
+        // Multiply corresponding elements of the input matrices.
+        for (int Row_A = 0; Row_A < matrix1.GetLength(0); Row_A++)
+            for (int Col_B = 0; Col_B < matrix2.GetLength(1); Col_B++)
+                for (int Col_A = 0; Col_A < matrix1.GetLength(1); Col_A++)
+                    result[Row_A, Col_B] += matrix1[Row_A, Col_A] * matrix2[Col_A, Col_B];
+        // Return the product of the input matrices.
+        return result;
     }
+
+    /// <summary>
+/// This method rotates a 2x2 matrix by a specified angle.
+/// The method checks if the input matrix is a valid 2x2 matrix.
+/// If the input matrix is invalid, the method returns a new 2D double array containing a single element, -1, to indicate an error.
+/// </summary>
+/// <param name="matrix">The 2D double array representing a 2x2 matrix.</param>
+/// <param name="angle">The angle of rotation in radians.</param>
+/// <returns>A new 2D double array containing the rotated matrix, or a new 2D double array containing a single element, -1, if the input matrix is invalid.</returns>
+/// <exception cref="ArgumentException">Thrown when the input matrix is not a valid 2x2 matrix.</exception>
+    public static double[,] Rotate2D(double[,] matrix, double angle)
+    {
+        // Negate the angle of rotation.
+        angle *= -1;
+        // Check if the input matrix is a valid 2x2 matrix.
+        if (! ValidateMatrix2D(matrix))
+            // Return a new 2D double array containing a single element, -1, if the input matrix is invalid.
+             return new double[,] {{-1}};
+        // Create a new 2D double array to store the rotated matrix.
+        double[,] result = new double[2, 2], rotation = new double[2,2];
+        // Set the elements of the rotation matrix.
+        rotation[0, 0] = Math.Cos(angle);
+        rotation[0, 1] = Math.Sin(angle);
+        rotation[1, 0] = Math.Sin(angle);
+        rotation[1, 1] = Math.Cos(angle);
+        result = Multiply(matrix, rotation);
+        for(int i = 0; i < result.GetLength(0); i++)
+            for(int j = 0; j < result.GetLength(1); j++)
+                result[i, j] = Math.Round(result[i, j], 2);
+        return result; 
+    }
+}
