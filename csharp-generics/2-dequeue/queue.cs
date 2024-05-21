@@ -56,7 +56,7 @@ public class Queue<T>
     
     public T Enqueue(T value)
     {
-        Node node == new Node(value);
+        Node node = new Node(value);
         if (head == null)
         {
             head = node;
@@ -70,7 +70,7 @@ public class Queue<T>
         count++;
         return node.value;
     }
-    
+
     /// <summary>
     /// This method removes and returns the element at the front of the queue.
     /// </summary>
