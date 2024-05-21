@@ -54,6 +54,18 @@ public class Queue<T>
         return typeof(T);
     } 
     
+    /// <summary>
+    /// This method adds an element to the end of the queue.
+    /// </summary>
+    /// <param name="value">The element to be added to the queue.</param>
+    /// <returns>
+    /// The element that was added to the queue.
+    /// </returns>
+    /// <remarks>
+    /// This method adds an element to the end of the queue, increasing the count of elements in the queue by one.
+    /// If the queue is empty, the new element becomes both the head and the tail of the queue.
+    /// Otherwise, the new element is added after the current tail, which then becomes the new tail.
+    /// </remarks>
     public T Enqueue(T value)
     {
         Node node == new Node(value);
