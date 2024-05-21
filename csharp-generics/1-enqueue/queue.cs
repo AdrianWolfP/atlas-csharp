@@ -61,7 +61,7 @@ public class Queue<T>
     /// <returns>The element that was added to the queue.</returns>
     public T Enqueue(T value)
     {
-        Node node == new Node(value);
+        Node node = new Node(value);
         if (head == null)
         {
             head = node;
