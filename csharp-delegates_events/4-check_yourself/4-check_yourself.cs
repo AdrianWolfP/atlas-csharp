@@ -161,7 +161,7 @@ public class Player
     /// - If the current HP value is greater than 0, the status is "needs help".
     /// - If the current HP value is 0, the status is "is knocked out".
     /// </remarks>
-    public void CheckStatus(object sender, CurrentHPArgs)
+    public void CheckStatus(object sender, CurrentHPArgs e)
     {
         float state = e.currentHp/maxHp;
         if (state == 1)
