@@ -147,6 +147,8 @@ public class Player
             return baseValue;
     }
 
+    /// <summary>
+    /// Checks the status of an object based on its current HP value.
     /// </summary>
     /// <param name="sender">The object that raised the `HPCheck` event.</param>
     /// <param name="e">An instance of the `CurrentHPArgs` class that contains the current HP value.</param>
@@ -159,7 +161,6 @@ public class Player
     /// - If the current HP value is greater than 0, the status is "needs help".
     /// - If the current HP value is 0, the status is "is knocked out".
     /// </remarks>
-    /// </summary>
     public void CheckStatus(object sender, CurrentHPArgs)
     {
         float state = e.currentHp/maxHp;
