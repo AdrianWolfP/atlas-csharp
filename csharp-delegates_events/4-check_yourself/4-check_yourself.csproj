@@ -7,4 +7,4 @@
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
   </PropertyGroup>
 
-</Project>_0_queueAA
+</Project>
