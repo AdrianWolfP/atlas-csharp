@@ -56,7 +56,7 @@ public class Player
     public Player(string name="Player", float maxHp=100f)
     {
        this.name = name;
-       if (maxHp <= 0f) {
+       if(maxHp <= 0f) {
         Console.WriteLine("maxHp must be greater than 0. maxHp set to 100f by default.");
         maxHp = 100f;
        }
@@ -123,7 +123,7 @@ public class Player
     public void ValidateHP(float newHp)
     {
         hp = Math.Clamp(newHp, 0, maxHp);
-        HPCheck(this, new CurrentHPArgs(this.hp));
+        OnCheckStatus(new CurrentHPArgs(this.hp));
     }
 
     /// <summary>
@@ -200,17 +200,17 @@ public enum Modifier
     Strong
 }
 
-/// <summary>
-/// Defines a delegate for calculating a modifier for a base value.
-/// </summary>
-/// <param name="baseValue">The base value to apply the modifier to.</param>
-/// <param name="modifier">The modifier to apply to the base value.</param>
-/// <returns>The base value modified by the specified modifier.</returns>
-/// <remarks>
-/// This delegate is used to define custom modifier calculation methods that can be passed to the `ApplyModifier` method.
-/// The `Modifier` enum defines the available modifiers: `Weak`, `Base`, and `Strong`.
-/// The `CalculateModifier` delegate should return the base value modified by the specified modifier.
-/// </remarks>
+    /// <summary>
+    /// Defines a delegate for calculating a modifier for a base value.
+    /// </summary>
+    /// <param name="baseValue">The base value to apply the modifier to.</param>
+    /// <param name="modifier">The modifier to apply to the base value.</param>
+    /// <returns>The base value modified by the specified modifier.</returns>
+    /// <remarks>
+    /// This delegate is used to define custom modifier calculation methods that can be passed to the `ApplyModifier` method.
+    /// The `Modifier` enum defines the available modifiers: `Weak`, `Base`, and `Strong`.
+    /// The `CalculateModifier` delegate should return the base value modified by the specified modifier.
+    /// </remarks>
 public delegate float CalculateModifier(float baseValue, Modifier modifier);
 
 /// <summary>
@@ -238,4 +238,4 @@ public class CurrentHPArgs: EventArgs
     {
         this.currentHp = newHp;
     }
-}  
+}
